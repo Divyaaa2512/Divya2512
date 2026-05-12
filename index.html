@@ -54,8 +54,21 @@
       }
 
       .sidebar a {
-        text-decoration: none;
+        text-decoration: underline;
+        text-underline-offset: 3px;
         color: #374151;
+        border-radius: 4px;
+        padding: 0.1rem 0.2rem;
+      }
+
+      .sidebar a:hover {
+        color: #111827;
+        background: #f3f4f6;
+      }
+
+      .sidebar a:focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
       }
 
       .main {
