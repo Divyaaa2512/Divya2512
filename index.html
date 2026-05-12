@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Layout</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f6fb;
+        color: #111827;
+      }
+
+      .app-layout {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        grid-template-rows: 72px 1fr 56px;
+        grid-template-areas:
+          "header header"
+          "sidebar main"
+          "footer footer";
+      }
+
+      .header {
+        grid-area: header;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        background: #1f2937;
+        color: #ffffff;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        background: #ffffff;
+        border-right: 1px solid #e5e7eb;
+        padding: 1.25rem;
+      }
+
+      .sidebar nav {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: #374151;
+      }
+
+      .main {
+        grid-area: main;
+        padding: 1.5rem;
+      }
+
+      .card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 1.25rem;
+      }
+
+      .footer {
+        grid-area: footer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-top: 1px solid #e5e7eb;
+        color: #6b7280;
+      }
+
+      @media (max-width: 768px) {
+        .app-layout {
+          grid-template-columns: 1fr;
+          grid-template-rows: 72px auto 1fr 56px;
+          grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+        }
+
+        .sidebar {
+          border-right: none;
+          border-bottom: 1px solid #e5e7eb;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-layout">
+      <header class="header">
+        <h1>My App</h1>
+        <span>Welcome</span>
+      </header>
+
+      <aside class="sidebar">
+        <nav aria-label="Primary">
+          <a href="#">Dashboard</a>
+          <a href="#">Projects</a>
+          <a href="#">Settings</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <section class="card">
+          <h2>Main Content</h2>
+          <p>This is a simple app layout with a header, sidebar, content area, and footer.</p>
+        </section>
+      </main>
+
+      <footer class="footer">© 2026 My App</footer>
+    </div>
+  </body>
+</html>
