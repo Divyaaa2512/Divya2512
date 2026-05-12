@@ -8,4 +8,4 @@ Simple app layout scaffold with:
 
 ## Run
 
-Open `/home/runner/work/Divya2512/Divya2512/index.html` in a browser.
+Open `index.html` in a browser.
